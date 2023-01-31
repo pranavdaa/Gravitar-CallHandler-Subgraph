@@ -4,3 +4,15 @@ type Gravatar @entity {
   displayName: String!
   imageUrl: String!
 }
+
+type Transaction @entity(immutable: true) {
+  id: ID!
+  transactionReceipt: TransactionReceipt
+  displayName:String!
+  imageUrl:String!
+}
+
+type TransactionReceipt @entity(immutable: true) {
+  id: ID!
+  transaction: Transaction
+}
